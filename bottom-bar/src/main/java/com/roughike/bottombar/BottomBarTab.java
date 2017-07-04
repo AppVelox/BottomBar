@@ -384,7 +384,7 @@ public class BottomBarTab extends LinearLayout {
     void select(boolean animate) {
         isActive = true;
 
-        if (animate) {
+        if (false) {
             animateIcon(activeAlpha, ACTIVE_SHIFTING_TITLELESS_ICON_SCALE);
             animateTitle(sixDps, ACTIVE_TITLE_SCALE, activeAlpha);
             animateColors(inActiveColor, activeColor);
@@ -411,7 +411,7 @@ public class BottomBarTab extends LinearLayout {
         float titleScale = isShifting ? 0 : INACTIVE_FIXED_TITLE_SCALE;
         int iconPaddingTop = isShifting ? sixteenDps : eightDps;
 
-        if (animate) {
+        if (false) {
             animateTitle(iconPaddingTop, titleScale, inActiveAlpha);
             animateIcon(inActiveAlpha, INACTIVE_SHIFTING_TITLELESS_ICON_SCALE);
             animateColors(activeColor, inActiveColor);
@@ -586,16 +586,18 @@ public class BottomBarTab extends LinearLayout {
         if (type == Type.TABLET || isTitleless) {
             return;
         }
+        return;
 
-        ViewCompat.setScaleX(titleView, scale);
-        ViewCompat.setScaleY(titleView, scale);
+//        ViewCompat.setScaleX(titleView, scale);
+//        ViewCompat.setScaleY(titleView, scale);
     }
 
     private void setIconScale(float scale) {
-        if (isTitleless && type == Type.SHIFTING) {
-            ViewCompat.setScaleX(iconView, scale);
-            ViewCompat.setScaleY(iconView, scale);
-        }
+        return;
+//        if (isTitleless && type == Type.SHIFTING) {
+//            ViewCompat.setScaleX(iconView, scale);
+//            ViewCompat.setScaleY(iconView, scale);
+//        }
     }
 
     @Override
