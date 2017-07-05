@@ -390,7 +390,7 @@ public class BottomBarTab extends LinearLayout {
             animateColors(inActiveColor, activeColor);
         } else {
             setTitleScale(ACTIVE_TITLE_SCALE);
-            setTopPadding(sixDps);
+            //setTopPadding(sixDps);
             setIconScale(ACTIVE_SHIFTING_TITLELESS_ICON_SCALE);
             setColors(activeColor);
             setAlphas(activeAlpha);
@@ -417,7 +417,7 @@ public class BottomBarTab extends LinearLayout {
             animateColors(activeColor, inActiveColor);
         } else {
             setTitleScale(titleScale);
-            setTopPadding(iconPaddingTop);
+            //setTopPadding(iconPaddingTop);
             setIconScale(INACTIVE_SHIFTING_TITLELESS_ICON_SCALE);
             setColors(inActiveColor);
             setAlphas(inActiveAlpha);
