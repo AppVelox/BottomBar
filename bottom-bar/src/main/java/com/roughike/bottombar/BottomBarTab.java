@@ -162,11 +162,11 @@ public class BottomBarTab extends LinearLayout {
     }
 
     Type getType() {
-        return type;
+        return Type.FIXED;
     }
 
     void setType(Type type) {
-        this.type = type;
+        this.type = Type.FIXED;
     }
 
     boolean isTitleless() {
