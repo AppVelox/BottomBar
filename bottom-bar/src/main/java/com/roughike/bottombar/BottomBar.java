@@ -989,17 +989,17 @@ public class BottomBar extends LinearLayout implements View.OnClickListener, Vie
     }
 
     private void animateBGColorChange(View clickedView, final int newColor) {
-        prepareForBackgroundColorAnimation(newColor);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (!outerContainer.isAttachedToWindow()) {
-                return;
-            }
-
-            backgroundCircularRevealAnimation(clickedView, newColor);
-        } else {
-            backgroundCrossfadeAnimation(newColor);
-        }
+//        prepareForBackgroundColorAnimation(newColor);
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            if (!outerContainer.isAttachedToWindow()) {
+//                return;
+//            }
+//
+//            backgroundCircularRevealAnimation(clickedView, newColor);
+//        } else {
+//            backgroundCrossfadeAnimation(newColor);
+//        }
     }
 
     private void prepareForBackgroundColorAnimation(int newColor) {
