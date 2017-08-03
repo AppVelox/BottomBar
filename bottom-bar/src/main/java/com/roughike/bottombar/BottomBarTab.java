@@ -536,50 +536,51 @@ public class BottomBarTab extends LinearLayout {
     }
 
     private void animateTitle(int padding, float scale, float alpha) {
-        if (type == Type.TABLET && isTitleless) {
-            return;
-        }
-
-        setTopPaddingAnimated(iconView.getPaddingTop(), padding);
-
-        ViewPropertyAnimatorCompat titleAnimator = ViewCompat.animate(titleView)
-                .setDuration(ANIMATION_DURATION)
-                .scaleX(scale)
-                .scaleY(scale);
-        titleAnimator.alpha(alpha);
-        titleAnimator.start();
+//        if (type == Type.TABLET && isTitleless) {
+//            return;
+//        }
+//
+//        setTopPaddingAnimated(iconView.getPaddingTop(), padding);
+//
+//        ViewPropertyAnimatorCompat titleAnimator = ViewCompat.animate(titleView)
+//                .setDuration(ANIMATION_DURATION)
+//                .scaleX(scale)
+//                .scaleY(scale);
+//        titleAnimator.alpha(alpha);
+//        titleAnimator.start();
     }
 
     private void animateIconScale(float scale) {
-        ViewCompat.animate(iconView)
-                .setDuration(ANIMATION_DURATION)
-                .scaleX(scale)
-                .scaleY(scale)
-                .start();
+//        ViewCompat.animate(iconView)
+//                .setDuration(ANIMATION_DURATION)
+//                .scaleX(scale)
+//                .scaleY(scale)
+//                .start();
     }
 
     private void animateIcon(float alpha, float scale) {
-        ViewCompat.animate(iconView)
-                .setDuration(ANIMATION_DURATION)
-                .alpha(alpha)
-                .start();
-
-        if (isTitleless && type == Type.SHIFTING) {
-            animateIconScale(scale);
-        }
+//        ViewCompat.animate(iconView)
+//                .setDuration(ANIMATION_DURATION)
+//                .alpha(alpha)
+//                .start();
+//
+//        if (isTitleless && type == Type.SHIFTING) {
+//            animateIconScale(scale);
+//        }
     }
 
     private void setTopPadding(int topPadding) {
-        if (type == Type.TABLET || isTitleless) {
-            return;
-        }
-
-        iconView.setPadding(
-                iconView.getPaddingLeft(),
-                topPadding,
-                iconView.getPaddingRight(),
-                iconView.getPaddingBottom()
-        );
+        return;
+//        if (type == Type.TABLET || isTitleless) {
+//            return;
+//        }
+//
+//        iconView.setPadding(
+//                iconView.getPaddingLeft(),
+//                topPadding,
+//                iconView.getPaddingRight(),
+//                iconView.getPaddingBottom()
+//        );
     }
 
     private void setTitleScale(float scale) {
@@ -593,11 +594,11 @@ public class BottomBarTab extends LinearLayout {
     }
 
     private void setIconScale(float scale) {
-        //return;
-        if (isTitleless && type == Type.SHIFTING) {
-            ViewCompat.setScaleX(iconView, scale);
-            ViewCompat.setScaleY(iconView, scale);
-        }
+        return;
+//        if (isTitleless && type == Type.SHIFTING) {
+//            ViewCompat.setScaleX(iconView, scale);
+//            ViewCompat.setScaleY(iconView, scale);
+//        }
     }
 
     @Override
