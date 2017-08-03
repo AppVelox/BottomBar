@@ -417,7 +417,7 @@ public class BottomBarTab extends LinearLayout {
             animateColors(activeColor, inActiveColor);
         } else {
             setTitleScale(titleScale);
-            //setTopPadding(iconPaddingTop);
+            setTopPadding(sixDps);
             setIconScale(INACTIVE_SHIFTING_TITLELESS_ICON_SCALE);
             setColors(inActiveColor);
             setAlphas(inActiveAlpha);
@@ -570,17 +570,17 @@ public class BottomBarTab extends LinearLayout {
     }
 
     private void setTopPadding(int topPadding) {
-        return;
+//        return;
 //        if (type == Type.TABLET || isTitleless) {
 //            return;
 //        }
 //
-//        iconView.setPadding(
-//                iconView.getPaddingLeft(),
-//                topPadding,
-//                iconView.getPaddingRight(),
-//                iconView.getPaddingBottom()
-//        );
+        iconView.setPadding(
+                iconView.getPaddingLeft(),
+                topPadding,
+                iconView.getPaddingRight(),
+                iconView.getPaddingBottom()
+        );
     }
 
     private void setTitleScale(float scale) {
