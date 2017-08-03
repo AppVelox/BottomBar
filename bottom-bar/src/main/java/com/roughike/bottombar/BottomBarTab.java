@@ -593,11 +593,11 @@ public class BottomBarTab extends LinearLayout {
     }
 
     private void setIconScale(float scale) {
-        return;
-//        if (isTitleless && type == Type.SHIFTING) {
-//            ViewCompat.setScaleX(iconView, scale);
-//            ViewCompat.setScaleY(iconView, scale);
-//        }
+        //return;
+        if (isTitleless && type == Type.SHIFTING) {
+            ViewCompat.setScaleX(iconView, scale);
+            ViewCompat.setScaleY(iconView, scale);
+        }
     }
 
     @Override
