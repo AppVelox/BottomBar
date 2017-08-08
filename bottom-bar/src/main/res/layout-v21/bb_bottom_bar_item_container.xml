@@ -4,7 +4,9 @@
     <FrameLayout
         android:id="@+id/bb_bottom_bar_outer_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_gravity="bottom">
 
         <View
             android:id="@+id/bb_bottom_bar_background_overlay"
@@ -16,8 +18,9 @@
             android:id="@+id/bb_bottom_bar_item_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal" />
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"/>
 
     </FrameLayout>
 
