@@ -6,6 +6,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.Gravity;
@@ -104,10 +105,10 @@ class BottomBarBadge extends TextView {
     }
 
     void setColoredCircleBackground(int circleColor) {
-        int innerPadding = MiscUtils.dpToPixel(getContext(), 1);
-        ShapeDrawable backgroundCircle = BadgeCircle.make(innerPadding * 3, circleColor);
-        setPadding(innerPadding, innerPadding, innerPadding, innerPadding);
-        setBackgroundCompat(backgroundCircle);
+        int innerPadding = MiscUtils.dpToPixel(getContext(), 3);
+        //ShapeDrawable backgroundCircle = BadgeCircle.make(innerPadding * 3, circleColor);
+        setPadding(innerPadding, 0, innerPadding, 0);
+        setBackgroundCompat();
     }
 
     private void wrapTabAndBadgeInSameContainer(final BottomBarTab tab) {
@@ -154,19 +155,25 @@ class BottomBarBadge extends TextView {
         setX(iconView.getX() + xOffset - delta);
         setTranslationY(10);
 
-        if (params.width != size || params.height != size) {
-            params.width = size;
-            params.height = size;
-            setLayoutParams(params);
-        }
+//        if (params.width != size || params.height != size) {
+//            params.width = size;
+//            params.height = size;
+//            setLayoutParams(params);
+//        }
     }
 
     @SuppressWarnings("deprecation")
-    private void setBackgroundCompat(Drawable background) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            setBackground(background);
+    private void setBackgroundCompat() {
+        Drawable back;
+        if (getCount() >= 10) {
+            back = ResourcesCompat.getDrawable(getResources(), R.drawable.badge_background_big, null);
         } else {
-            setBackgroundDrawable(background);
+            back = ResourcesCompat.getDrawable(getResources(), R.drawable.badge_background_small, null);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            setBackground(back);
+        } else {
+            setBackgroundDrawable(back);
         }
     }
 }
